@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#10100d"><title>帝王竞技场 · 炸金花</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<header><div class="crown">♛</div><small>SUPREME CARD ARENA</small><h1>帝王竞技场</h1><p>三人炸金花 · 好友房 / 随机匹配</p><div id="conn" class="pill">正在连接服务器…</div></header>
+<section id="lobby" class="panel">
+ <label>你的昵称</label><input id="name" maxlength="12" placeholder="请输入昵称" value="玩家"/>
+ <button id="create" class="gold">创建好友房</button>
+ <div class="divider"></div><label>输入好友房间号</label><input id="roomCode" maxlength="6" placeholder="例如 ABC123" autocapitalize="characters"/><button id="join" class="dark">加入好友房</button>
+ <div class="divider"></div><button id="match" class="gold">⚡ 随机匹配</button>
+</section>
+<section id="game" hidden>
+ <section class="panel"><div class="row"><b>房间号：<span id="room">------</span></b><button id="copy" class="mini">复制房间号</button></div><div class="players" id="players"></div><p id="roomMessage" class="message">等待玩家加入…</p><button id="start" class="gold" hidden>房主开始发牌</button></section>
+ <section class="table panel"><div class="pot">底池：<b id="pot">0</b> 筹码</div><div id="opponents"></div><div class="myarea"><b>你的手牌</b><div id="myCards" class="cards"><span class="back">?</span><span class="back">?</span><span class="back">?</span></div><div id="myInfo" class="muted">等待开局</div></div></section>
+ <section class="panel"><div class="row"><b>轮到：<span id="turn">—</span></b><span>当前下注：<b id="bet">0</b></span></div><div class="actions"><button id="call" class="gold">跟注</button><button id="raise" class="gold">加注</button><button id="compare" class="dark">比牌</button><button id="fold" class="dark">弃牌</button></div><label id="targetLabel" hidden>选择比牌对象</label><select id="target" hidden></select><p id="gameMessage" class="message"></p><button id="again" class="gold" hidden>再开一局</button></section>
+ <button id="leave" class="link">离开房间</button>
+</section><p class="foot">仅供休闲娱乐，使用虚拟筹码，不提供真钱下注或提现。</p></main>
+<div id="toast"></div><script src="/socket.io/socket.io.js"></script><script src="/app.js"></script></body></html>
